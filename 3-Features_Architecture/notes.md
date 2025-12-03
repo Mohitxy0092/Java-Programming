@@ -25,7 +25,7 @@ Hybrid models use a combination of compilation and interpretation to balance per
 
 - **Compilation to Bytecode:** When you write Java source code(for example:- `sum.java`).and compile it using:`javac sum.java`.the Java compiler (`javac`) converts your source code into **bytecode**,which is stored in a file with a `.class` extension (for example: `sum.class`).This bytecode is a low level platform independent set of instructions. It is not tied to any specific operating system or hardware.Instead,it can run on any machine that has a Java Virtual Machine (JVM). JVM will talk to operating system via system calls.
 
-![alt text](/images/javaFlow.png)
+![alt text](/images/javaFLow.png)
 
 # Why Java is platform independent?
 
