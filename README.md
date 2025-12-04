@@ -4,7 +4,7 @@
 
 ## Folder Structure
 
-```
+```java
 java programming/
 │
 ├── folder-1/
@@ -17,6 +17,7 @@ java programming/
 └── README.md
 ```
 
-# Contents
+### Contents
+
 - folder-1/codes: Java source examples. Each file is a standalone example.
 - folder-1/notes.md: Topic notes and explanations.
