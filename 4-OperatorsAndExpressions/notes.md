@@ -388,7 +388,7 @@ Equivalent to `x = x + y`.
 
 Shifts bits left; fills with zeros on the right.
 **NOTE: Each left shift give results as `n*2^number of shifts`**
-   
+
    ex: `5<<2 = (5*2^2) = 20`
 
 - example:
@@ -430,8 +430,6 @@ Bitwise example:
    int b = 3;  // 0011
    int and = a & b; // 0001 -> 1
    ```
-
-
 
 ---
 
