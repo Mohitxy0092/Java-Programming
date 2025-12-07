@@ -63,3 +63,68 @@ Format of a format specifier:
 - `width`: Minimum number of characters to be written to the output.
 - `.precision`: For floating-point numbers, it specifies the number of digits after the decimal point
 - `conversion`: The type of data to be formatted (e.g., d, f, s, c).
+
+---
+
+## String
+
+### What is a String?
+
+In Java, a `String` is a sequence of characters. It is an object that represents a sequence of characters and is widely used in Java programming.
+Strings in Java are immutable, meaning once a String object is created, its value cannot be changed. Any modification to a String results in the creation of a new String object.
+
+![alt text](/images/string.png)
+
+### Creating Strings
+
+Strings can be created in two ways:
+
+1. Using string literals:
+
+   ```java
+   String str1 = "Hello, World!";
+   ```
+
+2. Using the `new` keyword:
+
+   ```java
+   String str2 = new String("Hello, World!");
+   ```
+
+### String Constructors
+
+The `String` class provides several constructors to create String objects:
+
+- `String(char[] value)`: Creates a string from a character array.
+- `String(String original)`: Creates a new string that is a copy of the original string.
+- `String(byte[] bytes)`: Creates a string from a byte array.
+
+example of String(char[] value) constructor:
+
+```java
+char[] charArray = {'H', 'e', 'l', 'l', 'o'};
+String strFromCharArray = new String(charArray); // "Hello"
+```
+
+example of String(String original) constructor:
+
+```java
+String original = "Hello, World!";
+String copy = new String(original); // "Hello, World!"
+```
+
+example of String(byte[] bytes) constructor:
+
+```java
+byte[] byteArray = {72, 101, 108, 108, 111};
+String strFromByteArray = new String(byteArray); // "Hello"
+```
+
+| Reference Variable Type | Where the Reference Is Stored | Where the Object Is Stored |
+| ----------------------- | ----------------------------- | -------------------------- |
+| Local variable          | Stack                         | Heap                       |
+| Instance variable       | Heap (inside the object)      | Heap                       |
+| Static variable         | Method Area / Metaspace       | Heap                       |
+
+
+![alt text](/images/string2.png)
