@@ -128,3 +128,53 @@ String strFromByteArray = new String(byteArray); // "Hello"
 
 
 ![alt text](/images/string2.png)
+
+## Methods of String
+
+Some commonly used methods of the `String` class present in `java.lang.String` include:
+
+```java
+- length() return int
+- toLowerCase() return String
+- toUpperCase() return String
+- trim() return String
+- charAt(int index) return char
+- substring(int beginIndex) return String
+- substring(int beginIndex, int endIndex) return String
+- replace(char oldChar, char newChar) return String
+- startsWith(String prefix) return boolean
+- endsWith(String suffix) return boolean
+- indexOf(String str) return int
+- indexOf(String str, int fromIndex) return int
+- indexOf(int ch) return int
+- lastIndexOf(String str) return int
+- lastIndexOf(String str, int fromIndex) return int
+- equals(Object obj) return boolean
+- equalsIgnoreCase(String anotherString) return boolean
+- compareTo(String anotherString) return int
+- valueOf(...) return String
+- concat(String str) return String
+```
+
+![alt text](/images/equalm.png)
+
+## Reqular Expressions with Strings
+
+A regular expression is a sequence of characters that forms a search pattern. When you search for data in a text, you can use this search pattern to describe what you are searching for. A regular expression can be a single character, or a more complicated pattern.
+
+- Java provides support for regular expressions through the `java.util.regex` package. Regular expressions are used for pattern matching within strings.
+
+![alt text](/images/matchingsy.png)
+
+![alt text](/images/meta.png)
+
+![alt text](/images/quanti.png)
+
+### Commonly Used Methods for Regular Expressions
+
+- `matches(String regex)`: Checks if the entire string matches the given regular expression.
+- `split(String regex)`: Splits the string around matches of the given regular expression.
+- `replaceAll(String regex, String replacement)`: Replaces each substring of the string that matches the given regular expression with the specified replacement string.
+- `replaceFirst(String regex, String replacement)`: Replaces the first substring of the string that matches the given regular expression with the specified replacement string.
+- `Pattern.compile(String regex)`: Compiles the given regular expression into a pattern.
+- `Matcher matcher(CharSequence input)`: Creates a matcher that will match the given input against this pattern.

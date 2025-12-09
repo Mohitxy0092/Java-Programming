@@ -8,9 +8,9 @@ The JRE manages several key operations during execution, including loading class
 
 The Java Virtual Machine (JVM) is a fundamental part of the Java Runtime Environment (JRE) and plays a key role in enabling Java’s platform independence. It acts as an execution engine that interprets or compiles Java bytecode into instructions the underlying hardware can understand. This is what gives Java its well-known Write Once, Run Anywhere (WORA) capability.
 
-# Workflow of Java File Execution
+## Workflow of Java File Execution
 
-**1.Writing the Java Program**
+**1.Writing the Java Program.**
 
 You begin by creating a Java source file, for example `first.java`, which contains your Java code.
 
