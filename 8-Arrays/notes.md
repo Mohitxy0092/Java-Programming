@@ -156,7 +156,7 @@ The `sort()` method sorts the array in ascending order by default. For arrays of
 
 `Arrays.sort(arrayName, Collections.reverseOrder());`
 
-### Example of sorting an array of integers:
+### Example of sorting an array of integers
 
 ```java
 import java.util.Arrays;
@@ -169,7 +169,7 @@ public class SortExample {
 }
 ```
 
-### Example of sorting an array of strings:
+### Example of sorting an array of strings
 
 ```java
 import java.util.Arrays;
