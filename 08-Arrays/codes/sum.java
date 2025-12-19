@@ -12,6 +12,12 @@ public class sum{
       {5,6,7,8},
       {9,10,11,12}
     };
-    for()
+    int sum1=0;
+    for(int []x: arr){
+      for(int y:x){
+        sum1+=y;
+      }
+    }
+    System.out.println("Sum of vector is :"+ sum1);
   }
 }
