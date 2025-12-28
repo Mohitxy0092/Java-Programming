@@ -209,3 +209,28 @@ class Circle {
     }
 }
 ```
+## Access Modifiers in OOP
+
+Access modifiers are keywords in object-oriented programming languages that define the visibility and accessibility of classes, methods, and variables. They help in implementing encapsulation by controlling access to the members of a class.
+
+### Types of Access Modifiers
+
+1. **Public**: Members declared as public are accessible from any other class.
+2. **Private**: Members declared as private are accessible only within the class they are defined in.
+3. **Protected**: Members declared as protected are accessible within the same package and by subclasses in other packages.
+4. **Default (Package-Private)**: If no access modifier is specified, the member is accessible only within its own package.
+
+```java
+class Circle {
+    public int radius;          // Public access
+    private String color;       // Private access
+    protected double area;      // Protected access
+    int diameter;               // Default (Package-Private) access
+
+    // Constructor and methods...
+}
+```
+
+---
+
+![alt text](../images/accM.png)
