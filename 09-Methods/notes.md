@@ -108,7 +108,7 @@ returnType  methodName(parameter list){
 
 ## NOTE
 
-- Java always uses pass by value. However, when passing objects, the value being passed is the reference to the object, which can lead to modifications of the object's state.
+- Java always uses pass by value. However, when passing objects, the value being passed is the reference to the object, which can lead to modifications of the object's state and therefore can sometimes appear as pass by reference.
 - Primitive data types are passed by value, while object references are also passed by value, but they refer to the same object in memory.
 
 ## Method Overloading
