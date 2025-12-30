@@ -46,6 +46,20 @@ while (i < 5) {
 }
 ```
 
+```java
+int[] arr = {1, 2, 3, 4};
+
+int sum = 0;
+int i = 0;
+
+while (i < arr.length) {
+    sum = sum + arr[i];
+    i++;
+}
+
+System.out.println(sum);
+```
+
 ### 3. Do-While Loop
 
 **Definition:** A do-while loop is similar to a while loop, but it guarantees that the code block will be executed at least once.
