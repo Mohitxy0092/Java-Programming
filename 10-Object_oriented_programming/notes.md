@@ -2,7 +2,7 @@
 
 object-oriented programming (OOP) is a programming paradigm that uses "classes" and "objects" to structure code. It is designed to increase modularity, reusability, and maintainability of code by organizing it around data and behavior.
 
-## Principles of OOP
+## Pillars and Principles of OOP
 
 1. **Encapsulation**
     - Encapsulation is the bundling of data (attributes) and methods (functions) that operate on that data into a single unit called a class. It restricts direct access to some of an object's components, which can prevent the accidental modification of data.
@@ -12,6 +12,8 @@ object-oriented programming (OOP) is a programming paradigm that uses "classes" 
     - Inheritance is a mechanism where a new class (called a subclass or derived class) can inherit properties and behaviors (attributes and methods) from an existing class (called a superclass or base class). This promotes code reusability and establishes a hierarchical relationship between classes.
 4. **Polymorphism**
     - Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different underlying forms (data types). The most common use of polymorphism is when a method in a subclass overrides a method in its superclass.
+
+## NOTE: Abstraction is the core design goal of OOP, and encapsulation, inheritance, and polymorphism are mechanisms that help achieve abstraction. However, all four are considered pillars of Object-Oriented Programming.
 
 ### Why we use object-oriented programming when we can do the same with procedural programming?
 
