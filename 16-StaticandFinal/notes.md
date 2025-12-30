@@ -1,5 +1,9 @@
 # Static and Final in Java
 
+## Why we need Static and Final keywords in Java
+
+In Java, the `static` and `final` keywords are used to define specific behaviors for variables, methods, and classes. They help in managing memory efficiently, ensuring data integrity, and controlling access to class members.
+
 ## Static Keyword
 
 The `static` keyword in Java is used to indicate that a particular member (variable or method) belongs to the class itself rather than to instances of the class. This means that there is only one copy of the static member, shared among all instances of the class.
@@ -21,7 +25,8 @@ A `static` variable is similar to a normal variable except that it includes a `s
  class className {
 
    access_modifier static dataType varName;
-   access_modifier static dataType varName = value;    
+   access_modifier static dataType varName = value;
+   private static int count=0;
  
  } 
   
@@ -380,3 +385,4 @@ It enhances the security of your class, as it cannot be extended/modified by oth
 For variables, if you know that the value of the variable don't need be changed throughout the program, declare that variable as final variable. In other words for constant values you should use final variable, for example PI.
 
 Similarly for methods, if you don't want your methods to be overridden/modified by subclasses, declare them as final methods. For classes, if you don't want your class to be inherited/modified by any other classes, declare them as final classes.
+
