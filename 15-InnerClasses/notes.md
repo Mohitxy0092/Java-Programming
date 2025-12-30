@@ -1,5 +1,15 @@
 # Inner Classes In Java
 
+## Why we use Inner Classes?
+
+Inner classes are used to logically group classes that are only used in one place. This increases encapsulation and helps to keep the code more organized and readable. Inner classes can also access the members of the outer class, including private members, which can be useful for certain design patterns.
+
+1. **Logical Grouping:** Inner classes help to logically group classes that are only used in one place, improving code organization.
+2. **Encapsulation:** Inner classes can access private members of the outer class, providing better encapsulation.
+3. **Event Handling:** Inner classes are often used in GUI programming for event handling, allowing for cleaner and more maintainable code.
+
+## What is an Inner Class?
+
 An inner class is a class declared inside the body of another class. The inner class has access to all members (including private) of the outer class, but the outer class can access the inner class members only through an object of the inner class.
 
 Syntax:
@@ -139,9 +149,3 @@ public class Anom {
   }
 }
 ```
-
-## why we use Inner Classes?
-
-1. **Logical Grouping:** Inner classes help to logically group classes that are only used in one place, improving code organization.
-2. **Encapsulation:** Inner classes can access private members of the outer class, providing better encapsulation.
-3. **Event Handling:** Inner classes are often used in GUI programming for event handling, allowing for cleaner and more maintainable code.
