@@ -135,7 +135,6 @@ Switch case is a control statement that allows a variable to be tested for equal
               break;
           default:
               dayName = "Invalid day";
-              break;
       }
       System.out.println("Day: " + dayName);
   ```
