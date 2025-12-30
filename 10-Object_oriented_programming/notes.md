@@ -234,3 +234,5 @@ class Circle {
 ---
 
 ![alt text](../images/accM.png)
+
+## The above diagram summarizes the accessibility of different access modifiers in Java.
