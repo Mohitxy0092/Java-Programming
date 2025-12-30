@@ -422,7 +422,7 @@ class Super{
 }
 class SubClass extends Super{
 
-  @Override
+  @Override // annotation to indicate method overriding
   public void method2(){ System.out.println("Method 2 SubClass is calling...");}
   
   public void method3() { System.out.println("Method 3 is calling..."); }
@@ -447,7 +447,8 @@ public class DynamicDispatch{
 
 ### Output
 
-```
+```java
+
 Method 1 is called...
 Method 2 SubClass is calling...
 Method 2 is calling...
