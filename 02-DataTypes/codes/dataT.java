@@ -13,7 +13,12 @@ class dataT{
         System.out.println("\n"+Integer.toOctalString(var));//to get octal bits of a number
         //But what about negative numbers lets see
         int var1= -5;
-
+        float x=10.5f;
+        double y=10.6;
+        boolean b=true;
+        System.out.println("Float value: "+x);
+        System.out.println("Double value: "+y);
+        System.out.println("Boolean value: "+b);
          System.out.println("\n"+Integer.toBinaryString(var1));
          System.out.println("\n"+Integer.toHexString(var1));
          System.out.println("\n"+Integer.toOctalString(var1));
