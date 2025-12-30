@@ -459,7 +459,7 @@ Common examples:
 - `+`, `-` evaluated left-to-right
 - `==`, `!=` evaluated after arithmetic
 - `&&` evaluated before `||`
-- Parentheses `()` override precedence
+- Parentheses `()` have the highest precedence.
 
 Examples:
 
