@@ -1,5 +1,7 @@
 # Interfaces
 
+## lets understand what is Abstract class and Interface in java
+
 An Abstract Class is defined as a class that’s declared with the “abstract” keyword. It is a collection of common subclass characteristics that should include at least one abstract method. An abstract class can have multiple concrete methods. Programmers using Java 8 and later can also incorporate default and static methods.
 
 -An abstract class cannot be instantiated, meaning you cannot create an object with it.
@@ -13,6 +15,8 @@ An Abstract Class is defined as a class that’s declared with the “abstract�
 -Defining a common interface for any subclasses
 
 -Code reusability
+
+## Interface
 
 An interface is a blueprint used to implement a class. It is a collection of abstract methods and contains no concrete methods, unlike abstract class. However, the interface offers full abstraction in Java, something that abstract classes cannot do.
 
