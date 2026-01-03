@@ -141,7 +141,7 @@ These built-in exceptions can be caught and handled using the exception handling
 
 ![alt text](../images/Exceptions.png)
 
-## NOTE: There are more exceptions and errors in Java, but these are some of the most commonly encountered ones.
+## NOTE: There are more exceptions and errors in Java, but these are some of the most commonly encountered ones
 
 **For a complete list, refer to the Java documentation.**
 [Link to Java Documentation](https://rollbar.com/blog/java-exceptions-hierarchy-explained/)
@@ -202,6 +202,7 @@ In addition to the built-in exceptions provided by Java, developers can create t
     }
   }
   ```
+
 ## Checked vs Unchecked Exceptions
 
 1. **Checked Exceptions**:Checked exceptions are checked at compile-time. It means if a method is throwing a checked exception then it should handle the exception using try-catch block or it should declare the exception using throws keyword, otherwise the program will give a compilation error.
@@ -209,3 +210,111 @@ Examples of checked exceptions include `IOException`, `SQLException`, and `Class
 
 2. **Unchecked Exceptions**: Unchecked exceptions are not checked at compile time. It means if your program is throwing an unchecked exception and even if you didn’t handle/declare that exception, the program won’t give a compilation error. Most of the times these exception occurs due to the bad data provided by user during the user-program interaction. It is up to the programmer to judge the conditions in advance, that can cause such exceptions and handle them appropriately. All Unchecked exceptions are direct sub classes of RuntimeException class.
 Examples of unchecked exceptions include `ArithmeticException`, `NullPointerException`, and `ArrayIndexOutOfBoundsException`.
+
+## NOTE:All the user defined exception classes are unchecked in nature because compiler don't forces us to handle them. they are simply thrown to sequence of calling functions without being handled
+
+**In summary, checked exceptions must be either caught or declared in the method signature, while unchecked exceptions do not have this requirement.**
+
+## Throw vs Throws
+
+1. **throw**: The `throw` keyword is used to explicitly throw an exception from a method or a block of code. It is followed by an instance of the exception class.
+
+2. **throws**: The `throws` keyword is used in a method signature to declare that the method may throw one or more exceptions. It indicates to the caller of the method that they need to handle or declare these exceptions.
+
+Example:
+
+```java
+class NegativeNumber extends Exception{
+  public String toString() {
+    return "Dimensions cannot be negative..";
+  }
+}
+public class th{
+  static int meth3(int a,int b) throws NegativeNumber {
+    if(a<0 || b<0 ) {
+      throw new NegativeNumber();
+    }
+    return a*b;
+    }
+  static void meth2() throws NegativeNumber {
+    int a=2,b= -21;
+    int c= meth3(a,b);
+    System.out.println(c);
+  }
+  public static void main(String arpgs[]) {
+    try {
+       meth2();
+     } catch (Exception e) {
+      System.out.println(e);
+     }
+  }
+}
+```
+
+## Finally Block
+
+The `finally` block is used in conjunction with `try` and `catch` blocks to ensure that a specific section of code is executed regardless of whether an exception was thrown or caught. It is typically used for cleanup activities, such as closing resources like file streams or database connections.
+
+```java
+public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int data = 25 / 0; // This will throw ArithmeticException
+            System.out.println(data);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block executed. Cleanup can be done here.");
+        }
+    }
+}
+```
+
+## Try with Resources
+
+The `try-with-resources` statement is a special form of the `try` statement that automatically manages resources that need to be closed after use. It ensures that each resource is closed at the end of the statement, even if an exception occurs. This feature was introduced in Java 7.
+
+```java
+ // Just an example you may read some file handling before this...
+package resourcesdemo;
+import java.io.*;
+import java.util.*;
+
+public class ResourcesDemo 
+{
+    
+    static void Divide() throws Exception
+    {
+        
+        
+        try(FileInputStream fi=new FileInputStream("/Users/name/Desktop/Test.txt");Scanner sc=new Scanner(fi) )
+        {
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        System.out.println(a/c);
+        }
+        
+    }
+    
+    public static void main(String[] args) throws Exception
+    {
+        try
+        {
+        Divide();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        
+        //int x=sc.nextInt();
+        
+       // System.out.println(x);
+        
+    }
+    
+}
+```
+
+## All classes of Exception extend from Throwable. In Java, the Exception class is a subclass of Throwable, which means every exception you handle in Java is derived from Throwable, ensuring that they all have the common behaviors and properties. This hierarchy allows for consistent exception handling throughout your code
