@@ -476,4 +476,4 @@ Examples:
 - Use parentheses to make intent explicit.
 - Prefer short, clear expressions over dense hacks.
 
-**NOTE:** See the Java Language Specification for the complete precedence table.
+**NOTE:** See the Java Language Specification for the complete precedence table. 
