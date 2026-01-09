@@ -137,6 +137,7 @@ Switch case is a control statement that allows a variable to be tested for equal
               dayName = "Invalid day";
       }
       System.out.println("Day: " + dayName);
+
   ```
 
 ## Difference between if-else and switch-case
