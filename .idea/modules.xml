@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01-Introduction/01-Introduction.iml" filepath="$PROJECT_DIR$/01-Introduction/01-Introduction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-DataTypes/02-DataTypes.iml" filepath="$PROJECT_DIR$/02-DataTypes/02-DataTypes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04-OperatorsAndExpressions/04-OperatorsAndExpressions.iml" filepath="$PROJECT_DIR$/04-OperatorsAndExpressions/04-OperatorsAndExpressions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-StringClassAndPrinting/05-StringClassAndPrinting.iml" filepath="$PROJECT_DIR$/05-StringClassAndPrinting/05-StringClassAndPrinting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06-Conditional_Statements/06-Conditional_Statements.iml" filepath="$PROJECT_DIR$/06-Conditional_Statements/06-Conditional_Statements.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07-Loops/07-Loops.iml" filepath="$PROJECT_DIR$/07-Loops/07-Loops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08-Arrays/08-Arrays.iml" filepath="$PROJECT_DIR$/08-Arrays/08-Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09-Methods/09-Methods.iml" filepath="$PROJECT_DIR$/09-Methods/09-Methods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10-Object_oriented_programming/10-Object_oriented_programming.iml" filepath="$PROJECT_DIR$/10-Object_oriented_programming/10-Object_oriented_programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11-Inheritance/11-Inheritance.iml" filepath="$PROJECT_DIR$/11-Inheritance/11-Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-Polymorphism/12-Polymorphism.iml" filepath="$PROJECT_DIR$/12-Polymorphism/12-Polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13-Abstraction/13-Abstraction.iml" filepath="$PROJECT_DIR$/13-Abstraction/13-Abstraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14-Interfaces/14-Interfaces.iml" filepath="$PROJECT_DIR$/14-Interfaces/14-Interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15-InnerClasses/15-InnerClasses.iml" filepath="$PROJECT_DIR$/15-InnerClasses/15-InnerClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16-StaticandFinal/16-StaticandFinal.iml" filepath="$PROJECT_DIR$/16-StaticandFinal/16-StaticandFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/17-Packages/17-Packages.iml" filepath="$PROJECT_DIR$/17-Packages/17-Packages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/18-ExceptionHandling/18-ExceptionHandling.iml" filepath="$PROJECT_DIR$/18-ExceptionHandling/18-ExceptionHandling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java_Programming.iml" filepath="$PROJECT_DIR$/.idea/Java_Programming.iml" />
+    </modules>
+  </component>
+</project>
