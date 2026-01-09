@@ -5,7 +5,7 @@
 In Java, data types specify the type of data that a variable can hold. Java is a
 statically typed language, which means that every variable must be declared with a data type before it can be used. Java has two main categories of data types: primitive data types and reference data types.
 
-### Primitive Data Types
+### Primitive Data Types 
 
 | Type    | Category       | Size              | Range / Values                                          |
 | ------- | -------------- | ----------------- | ------------------------------------------------------- |
