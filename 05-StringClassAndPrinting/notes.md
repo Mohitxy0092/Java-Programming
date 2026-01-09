@@ -354,4 +354,4 @@ Table below shows some of the useful methods of StringBuffer and StringBuilder c
 - StringBuffer is **`not as faster as`** StringBuilder for string manipulation operations, since methods of StringBuffer class is synchronized.
 - StringBuilder was added in **`java 1.5`**, before that there was only String and StringBuffer classes for string handling.
 - In single threaded environment, prefer String over StringBuilder if you don't need mutable objects as String is more easy and convenient to use. Use StringBuilder if mutable objects needed.
-- In multi-threaded environment, prefer StringBuffer if you need mutable objects as StringBuffer is thread safe. Use String if mutable objects not needed.
+- In multi-threaded environment, prefer StringBuffer if you need mutable objects as StringBuffer is thread safe. Use String if mutable objects not needed. 
