@@ -61,7 +61,7 @@ Packages can be categorized in two types :
 
 These are the packages that are created by the programmer to organize their own classes and interfaces. For example, if you are developing a library management system, you might create packages like `com.library.books`, `com.library.members`, and `com.library.transactions` to group related classes together.
 
-### Built-in packages
+### Built in packages
 
 Java provides a rich set of built-in packages that come with the Java Development Kit (JDK). These packages contain pre-written classes and interfaces that developers can use to perform common tasks. Some commonly used built-in packages include:
 
