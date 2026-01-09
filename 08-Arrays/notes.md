@@ -198,7 +198,7 @@ for(int i=0;i<n-1;i++){
 }
 ```
 
-**2.Insertion Sort**
+**2.Insertion Sort** 
 
 ```java
 for(int i=1;i<n;i++){
