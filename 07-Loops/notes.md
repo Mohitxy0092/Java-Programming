@@ -58,6 +58,7 @@ while (i < arr.length) {
 }
 
 System.out.println(sum);
+
 ```
 
 ### 3. Do-While Loop
