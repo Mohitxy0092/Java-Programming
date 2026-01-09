@@ -425,7 +425,7 @@ class SubClass extends Super{
   @Override // annotation to indicate method overriding
   public void method2(){ System.out.println("Method 2 SubClass is calling...");}
   
-  public void method3() { System.out.println("Method 3 is calling..."); }
+  public void method3() { System.out.println("Method 3 is calling..."); } 
 
 }
 
