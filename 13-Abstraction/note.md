@@ -21,7 +21,7 @@ An abstract class is a class that cannot be instantiated on its own and is meant
 
 **Refer to the Shape.java file.**
 
-## Abstract Class Do and Don'ts
+## Abstract Class Do and Don'ts 
 
 ### Do
 
