@@ -120,4 +120,4 @@ Java offers several key features that contribute to its popularity and effective
 11. **Distributed Computing:** Java has built-in support for distributed computing through technologies like Remote Method Invocation (RMI) and Java EE, enabling the development of networked applications.
 **These features make Java a versatile and powerful language suitable for a wide range of applications, from web development to mobile apps and enterprise software.**
 
-![alt text](../images/JDK.png)
+![alt text](../images/JDK.png) 
