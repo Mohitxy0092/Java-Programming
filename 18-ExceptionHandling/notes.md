@@ -317,4 +317,4 @@ public class ResourcesDemo
 }
 ```
 
-## All classes of Exception extend from Throwable. In Java, the Exception class is a subclass of Throwable, which means every exception you handle in Java is derived from Throwable, ensuring that they all have the common behaviors and properties. This hierarchy allows for consistent exception handling throughout your code
+## All classes of Exception extend from Throwable. In Java, the Exception class is a subclass of Throwable, which means every exception you handle in Java is derived from Throwable, ensuring that they all have the common behaviors and properties. This hierarchy allows for consistent exception handling throughout your code.
