@@ -1,3 +1,5 @@
 .vscode/
 *.class
 .idea/
+*.log
+.DS_Store
