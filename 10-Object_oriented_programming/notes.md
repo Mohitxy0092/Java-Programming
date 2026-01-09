@@ -15,9 +15,9 @@ object-oriented programming (OOP) is a programming paradigm that uses "classes" 
 
 ## NOTE: Abstraction is the core design goal of OOP, and encapsulation, inheritance, and polymorphism are mechanisms that help achieve abstraction. However, all four are considered pillars of Object-Oriented Programming.
 
-### Why we use object-oriented programming when we can do the same with procedural programming?
+### Why we use object oriented programming when we can do the same with procedural programming?
 
-   **Object-oriented programming provides us these features:**
+   **Object oriented programming provides us these features:**
 
 - **Modularity**: OOP allows for better organization of code into classes and objects, making it easier to manage and understand.
 - **Reusability**: Classes can be reused across different programs, reducing redundancy and saving development time.
