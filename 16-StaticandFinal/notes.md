@@ -7,7 +7,7 @@ In Java, the `static` and `final` keywords are used to define specific behaviors
 ## Static Keyword
 
 The `static` keyword in Java is used to indicate that a particular member (variable or method) belongs to the class itself rather than to instances of the class. This means that there is only one copy of the static member, shared among all instances of the class.
-more formally:
+**more formally:**
 Generally you need an object of a class to access members like variables and methods of that class, because these members belongs to object or instance of that class. Each object have their specific values for such members. But sometimes we need members that should belong to class rather than objects and should be same for all the objects. To achieve this java provides static keyword. static members belongs to class not objects. You can access such members using class name itself rather than objects. Let's see the different usage of static keyword.
 
 There are four main types of static members in Java:
