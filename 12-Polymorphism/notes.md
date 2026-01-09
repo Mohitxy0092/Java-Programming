@@ -38,7 +38,7 @@ Polymorphism is a core concept in object-oriented programming and polymorphism a
     class Dog extends Animal {
         @Override
         void sound() {
-            System.out.println("Dog barks");
+            System.out.println("Dog barks"); 
         }
     }
     public class Polymorphism {
