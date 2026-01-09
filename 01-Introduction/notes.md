@@ -3,6 +3,7 @@
 The Java Development Kit (JDK) is a core component of the Java development environment. It’s a cross platform software toolkit that provides everything needed to build, compile, and debug Java applications. The JDK works alongside the Java Virtual Machine (JVM) and the Java Runtime Environment (JRE) to form the complete Java platform.
 
 The Java Runtime Environment (JRE) is an open-access software package that provides the libraries, tools, and a dedicated Java Virtual Machine (JVM) needed to run Java applications. It’s an essential part of the overall Java ecosystem and is included within the Java Development Kit (JDK).
+
 The JRE supplies the runtime environment required for executing Java programs. When Java source code is compiled, it’s converted into bytecode, a platform-independent format. To execute this bytecode on any system, the JRE is required.
 The JRE manages several key operations during execution, including loading classes, performing memory access checks, and interacting with system resources. In essence, it serves as a software layer between Java applications and the underlying operating system, enabling Java’s “write once, run anywhere” capability.
 
