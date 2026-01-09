@@ -18,7 +18,7 @@ An Abstract Class is defined as a class that’s declared with the “abstract�
 
 ## Interface
 
-An interface is a blueprint used to implement a class. It is a collection of abstract methods and contains no concrete methods, unlike abstract class. However, the interface offers full abstraction in Java, something that abstract classes cannot do.
+An interface is a blueprint used to implement a class. It is a collection of abstract methods and contains no concrete methods, unlike abstract class. However, the interface offers full abstraction in Java, something that abstract classes cannot do. 
 
 Like a class, an interface can contain methods and variables, though the declared methods default to abstract.
 
