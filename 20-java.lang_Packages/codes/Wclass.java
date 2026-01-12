@@ -31,40 +31,40 @@ public class Wclass {
 
   //Conversion from wrapper class to primitive
      /*
-      * Integer in = new Integer(100);
-      * // Converting into primitive type
-      * int i = in.intValue();
-      * // OR
-      * int i = in;
-      * 
-      * Double db = new Double(10.5);
-      * double d = db.doubleValue();
-      * // OR
-      * double d = db;
-      * AutoBoxing
-      * int i = 100;
-      * double d = 10.5;
-      * // Following are autoboxing
-      * Integer in = i;
-      * Integer ig = 20;
-      * Double db = d;
-      * Double dl = 20.5;
-      * // Following is not autoboxing
-      * // Integer in = new Integer(i);
-      * 
-      * ----------------------------------------
-      * AutoUnBoxing
-      * Integer in = new Integer(100);
-      * Double db = new Double(20.5);
-      * // Following are unboxing
-      * int i= in;
-      * double d = db;
-      * int j = new Integer(50);
-      * double k = new Double(50.5);
-      * // Following is not unboxing
-      * // int i = in.intValue();
-      * 
-      * 
+       Integer in = new Integer(100);
+       // Converting into primitive type
+       int i = in.intValue();
+       // OR
+       int i = in;
+       
+       Double db = new Double(10.5);
+       double d = db.doubleValue();
+       // OR
+       double d = db;
+       AutoBoxing
+       int i = 100;
+       double d = 10.5;
+       // Following are autoboxing
+       Integer in = i;
+       Integer ig = 20;
+       Double db = d;
+       Double dl = 20.5;
+       // Following is not autoboxing
+       // Integer in = new Integer(i);
+       
+       ----------------------------------------
+       AutoUnBoxing
+       Integer in = new Integer(100);
+       Double db = new Double(20.5);
+       // Following are unboxing
+       int i= in;
+       double d = db;
+       int j = new Integer(50);
+       double k = new Double(50.5);
+       // Following is not unboxing
+       // int i = in.intValue();
+       
+       
       */
 
      Integer intv=Integer.valueOf(100);
