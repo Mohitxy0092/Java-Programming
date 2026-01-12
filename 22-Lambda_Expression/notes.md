@@ -62,6 +62,7 @@ The case, as the name implies, refers to a circumstance in which two input param
 ( a, b) -> {body of function}
 
 ```
+
 ## Functional Interfaces
 
 A functional interface is an interface that contains only one abstract method. They can have multiple default or static methods but only one abstract method. Lambda expressions are primarily used to provide the implementation of functional interfaces.
@@ -72,6 +73,28 @@ interface MyInter {
     void MyInterMethod(); // Single abstract method
 }
 ```
+
+## **CAPTURE IN LAMBDA EXPRESSIONS**
+
+- Lambda expressions can contain multiple statements.
+- Variables can be declared inside lambda expressions.
+- Lambda expressions can have local variables.
+- These expressions can access or capture local variables if they are final or cannot be modified.
+- Lambda expressions can even capture instance variables, whether they are final or not.
+- Lambda expressions are similar to inner classes.
+- A lambda expression can be passed to a method as an object, since it is used to define a method.
+- When a method takes a functional interface as a parameter, you can pass a lambda expression to that method.
+
+## **METHOD REFERENCE**
+
+- Method references are created or defined using functional interfaces.
+- `::` (scope resolution operator in C/C++) is the operator used for referencing.
+- In Java, `::` is used for method reference.
+- Any method can be called or referred to by a functional interface with a single method.
+- For non-static members, methods are assigned using objects.
+- Constructors of any class can be assigned as method references.
+- This method is used to write compact code.
+- Method referencing is similar to polymorphism.
 
 ## Advantages of Lambda Expressions
 
