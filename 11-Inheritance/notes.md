@@ -52,7 +52,7 @@ SavingAccount IS-A Account
 
 ### Definition
 
-A class inherits from another class, which itself inherits from a third class.
+A class inherits from another class, which itself inherits from a third class,But Java does not support multiple inheritance directly to avoid complexity and ambiguity ex:- Diamond Problem.
 
 ### Example
 
@@ -155,7 +155,7 @@ public class Example{
 }
 ```
 
-![alt text](../images/inheri.png)
+![image](../images/Inheri.png)
 
 ---
 
