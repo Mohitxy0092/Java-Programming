@@ -306,3 +306,69 @@ There are two types of pipe streams in Java:
 2. PipedOutputStream: This class is used to write data to a pipe. It is connected to a PipedInputStream, which reads data from the pipe.
 3. PipedReader: This class is used to read character data from a pipe. It is connected to a PipedWriter, which writes character data to the pipe.
 4. PipedWriter: This class is used to write character data to a pipe. It is connected to a PipedReader, which reads character data from the pipe.
+
+## Random Access File
+
+```java
+public class RandomAccessFile
+extends Object
+implements DataOutput, DataInput, Closeable
+```
+
+Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the file pointer; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read/write mode, then output operations are also available;
+
+output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the getFilePointer method and set by the seek method.
+
+It is generally true of all the reading routines in this class that if end-of-file is reached before the desired number of bytes has been read, an EOFException (which is a kind of IOException) is thrown. If any byte cannot be read for any reason other than end-of-file, an IOException other than EOFException is thrown. In particular, an IOException may be thrown if the stream has been closed.
+
+## File class
+
+File class is a part of java.io package. It is used to create, delete, and manipulate files and directories.
+
+### Some commonly used constructors:
+
+| Constructor | Description |
+| --- | --- |
+| `File(String pathname)` | Creates a new File instance by converting the given pathname string into an abstract pathname. |
+| `File(String parent, String child)` | Creates a new File instance from a parent pathname string and a child pathname string. |
+| `File(File parent, String child)` | Creates a new File instance from a parent abstract pathname and a child pathname string. |
+
+### Some commonly used methods:
+
+| Modifier and Type | Method | Description |
+| --- | --- | --- |
+| `boolean` | `createNewFile()` | Atomically creates a new, empty file named by this abstract pathname if and only if a file with this name does not yet exist. |
+| `boolean` | `delete()` | Deletes the file or directory denoted by this abstract pathname. |
+| `boolean` | `exists()` | Tests whether the file or directory denoted by this abstract pathname exists. |
+| `String[]` | `list()` | Returns an array of strings naming the files and directories in the directory denoted by this abstract pathname. |
+| `boolean` | `mkdir()` | Creates the directory named by this abstract pathname. | 
+| `boolean` | `renameTo(File dest)` | Renames the file denoted by this abstract pathname. |
+
+## Serialization in Java
+
+Serialization is the process of converting an object into a byte stream, thereby making it possible to save the object to a file or transmit it over a network. The byte stream can later be deserialized back into a copy of the original object.
+
+### Why Serialization is used in Java?
+
+Serialization is used in Java for several reasons:
+
+1. **Persistence**: Serialization allows objects to be saved to a file or database, enabling them to be restored later.
+2. **Communication**: Serialized objects can be transmitted over a network, allowing for remote method invocation (RMI) and other distributed computing scenarios.
+3. **Caching**: Serialized objects can be stored in memory or on disk for faster access, improving application performance.
+4. **Deep Copy**: Serialization can be used to create deep copies of objects, as the entire object graph is serialized and deserialized.
+5. **Session Management**: In web applications, serialization is often used to store user session data, allowing it to be restored when the user returns.
+6. **Interoperability**: Serialized objects can be shared between different Java applications or even different programming languages that support serialization.
+7. **Versioning**: Serialization can help manage different versions of objects, allowing for backward compatibility when the class structure changes.
+8. **Ease of Use**: Java provides built-in support for serialization through the `Serializable` interface, making it easy to implement serialization in custom classes.
+9. **Object Cloning**: Serialization can be used as a mechanism for cloning objects, as the serialized object can be deserialized to create a new instance with the same state.
+10. **Data Transfer**: Serialization is commonly used in data transfer scenarios, such as sending objects over sockets or storing them in databases, making it easier to work with complex data structures.
+
+### How to Serialize an Object in Java?
+
+To serialize an object in Java, you need to follow these steps:
+
+1. **Implement the Serializable Interface**: The class of the object you want to serialize must implement the `java.io.Serializable` interface. This is a marker interface that indicates that the class can be serialized.
+2. **Create an ObjectOutputStream**: Use the `ObjectOutputStream` class to write the object to a byte stream.
+3. **Write the Object**: Use the `writeObject()` method of the `ObjectOutputStream` to serialize the object.
+4. **Close the Stream**: Always close the `ObjectOutputStream` to release system resources.
+5. **Handle Exceptions**: Be prepared to handle `IOException` and `NotSerializableException` that may occur during serialization.
