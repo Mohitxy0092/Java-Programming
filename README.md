@@ -1,7 +1,5 @@
 # Java Programming
 
-## If you people find any wrong explaination or code please inform me on my email:mohitxy01@gmail.com
-
 **This repository contains my Java learning materials, including source code examples and notes.**
 
 ## Folder Structure
