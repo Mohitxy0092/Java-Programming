@@ -160,3 +160,148 @@ In this example, the `Box` class has a bounded type parameter `T` that extends t
 ## Subtypes
 In Java Generics, subtyping works differently than with regular classes. If you have a generic class `Box<T>`, then `Box<SubType>` is not considered a subtype of `Box<SuperType>`, even if `SubType` is a subtype of `SuperType`. This is known as invariance in generics.
 
+## Generic Methods
+
+In addition to generic classes, you can also define generic methods in Java. A generic method is a method that has its own type parameters, which can be different from the type parameters of the class.
+
+### Example of Generic Methods:
+
+```java
+public class GenericMethodDemo {
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        printArray(intArray);
+        String[] strArray = {"Hello", "World"};
+        printArray(strArray);
+    }
+}
+```
+
+In this example, the `printArray` method is a generic method that takes an array of any type `T` and prints its elements. The type parameter `<T>` is declared before the return type of the method. When we call `printArray` with an array of `Integer` and an array of `String`, the method can handle both types without any issues, demonstrating the flexibility of generic methods.
+
+## Wildcards
+
+In Java Generics, a wildcard is represented by the `?` symbol and is used to denote an unknown type. Wildcards can be used in various ways to provide flexibility when working with generic types.
+### Example of Wildcards:
+
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class WildcardDemo {
+    public static void printList(List<?> list) {
+        for (Object element : list) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        List<Integer> intList = new ArrayList<>();
+        intList.add(1);
+        intList.add(2);
+        printList(intList);
+        
+        List<String> strList = new ArrayList<>();
+        strList.add("Hello");
+        strList.add("World");
+        printList(strList);
+    }
+}
+```
+
+In this example, the `printList` method uses a wildcard `?` to accept a list of any type. This allows us to pass both a `List<Integer>` and a `List<String>` to the same method without any issues. The wildcard provides flexibility while still maintaining type safety, as we can only read from the list and not modify it (since we don't know the exact type).
+
+##  Lower Bounded Wildcards
+
+In Java Generics, a lower bounded wildcard is denoted by `? super T`, where `T` is a specific type. This means that the wildcard can represent any type that is a supertype of `T`. Lower bounded wildcards are typically used when you want to write to a generic collection.
+
+### Example of Lower Bounded Wildcards:
+
+```java
+import java.util.List;
+import java.util.ArrayList;
+
+public class LowerBoundedWildcardDemo {
+    public static void addNumbers(List<? super Integer> list) {
+        list.add(1);
+        list.add(2);
+        list.add(3);
+    }
+
+    public static void main(String[] args) {
+        List<Number> numberList = new ArrayList<>();
+        addNumbers(numberList);
+        System.out.println(numberList);
+    }
+}
+```
+
+In this example, the `addNumbers` method accepts a `List<? super Integer>`, which means it can accept a list of `Integer` or any of its supertypes (like `Number`). This allows us to add `Integer` values to the list without any issues. In the `main` method, we create a `List<Number>` and pass it to the `addNumbers` method, demonstrating the use of lower bounded wildcards.
+
+## Upper Bounded Wildcards
+
+In Java Generics, an upper bounded wildcard is denoted by `? extends T`, where `T` is a specific type. This means that the wildcard can represent any type that is a subtype of `T`. Upper bounded wildcards are typically used when you want to read from a generic collection.
+
+### Example of Upper Bounded Wildcards:
+
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class UpperBoundedWildcardDemo {
+    public static void printNumbers(List<? extends Number> list) {
+        for (Number number : list) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        List<Integer> intList = new ArrayList<>();
+        intList.add(1);
+        intList.add(2);
+        printNumbers(intList);
+        
+        List<Double> doubleList = new ArrayList<>();
+        doubleList.add(3.14);
+        doubleList.add(2.71);
+        printNumbers(doubleList);
+    }
+}
+```
+In this example, the `printNumbers` method accepts a `List<? extends Number>`, which means it can accept a list of `Number` or any of its subtypes (like `Integer` or `Double`). This allows us to read `Number` values from the list without any issues. In the `main` method, we create a `List<Integer>` and a `List<Double>` and pass them to the `printNumbers` method, demonstrating the use of upper bounded wildcards.
+
+## Do and Don'ts of Generics
+
+### Do's:
+
+1. Use generics to ensure type safety and avoid `ClassCastException`.
+2. Use meaningful type parameter names (e.g., `T` for type, `E` for element, `K` for key, `V` for value).
+3. Use bounded type parameters when you want to restrict the types that can be used with a generic class or method.
+4. Use wildcards to provide flexibility when working with generic types, especially when you want to read from or write to a generic collection.
+5. Use generic methods to create reusable code that can work with different types.
+6. Use the diamond operator (`<>`) to simplify the instantiation of generic classes.
+7. Use generics to create type-safe collections and avoid the need for casting.
+8. Use generics to improve code readability and maintainability by making it clear what types are being used.
+9. Use generics to create flexible and reusable APIs that can work with different types without sacrificing type safety.
+10. Use generics to take advantage of compile-time type checking, which can help catch errors early in the development process.
+
+### Don'ts:
+
+1. Don't use raw types, as they can lead to unsafe operations and runtime errors.
+2. Don't use generics with primitive types; instead, use their wrapper classes (e.g., `Integer` for `int`, `Double` for `double`).
+3. Don't use wildcards when you need to modify a collection, as it can lead to
+compile-time errors.
+4. Don't use generics when you don't need them, as it can add unnecessary complexity to your code.
+5. Don't use generics with arrays, as they can lead to runtime exceptions due to type erasure.
+6. Don't use generics with static members, as they cannot be parameterized with type parameters.
+7. Don't use generics with constructors, as they cannot be parameterized with type parameters.
+8. Don't use generics with exceptions, as they cannot be parameterized with type parameters.
+9. Don't use generics with enums, as they cannot be parameterized with type parameters.
+10. Don't use generics with annotations, as they cannot be parameterized with type parameters.
