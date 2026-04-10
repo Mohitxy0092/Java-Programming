@@ -49,7 +49,7 @@ There are some interfaces in the collection framework, such as:
 8. **SortedMap Interface:** This interface extends the Map interface and represents a collection of key-value pairs that maintains its keys in a sorted order. It provides methods for retrieving values based on their corresponding keys and for performing range-based operations on the map.
 
 ---
-All of these are present in java.util package and we can use them by importing the package in our code. Each of these interfaces has multiple implementations that provide different functionalities and performance characteristics, allowing developers to choose the most appropriate collection type for their specific use case.
+All of these are present in `java.util` package and we can use them by importing the package in our code. Each of these interfaces has multiple implementations that provide different functionalities and performance characteristics, allowing developers to choose the most appropriate collection type for their specific use case.
 
 ---
 
@@ -155,3 +155,57 @@ Think of `Collection` as giving you **four core abilities**:
 | Remove | `remove`, `removeAll`, `retainAll`, `clear` |
 | Check | `contains`, `containsAll`, `isEmpty`, `equals`, `size` |
 | Traverse/Convert | `iterator`, `toArray` |
+
+## `List` Interface (extends Collection)
+
+Extra methods shown:
+
+```
+add(int index, E e)
+addAll(int index, Collection<E> c)
+remove(int index)
+get(int index)
+set(int index, E e)
+subList(int from, int to)
+indexOf(Object o)
+lastIndexOf(Object o)
+listIterator()
+listIterator(int index)
+```
+
+---
+
+## Example
+
+```java
+importjava.util.*;
+
+publicclassMain {
+publicstaticvoidmain(String[]args) {
+List<String>list=newArrayList<>();
+
+list.add("A");
+list.add("B");
+list.add("C");
+
+list.add(1,"X");// insert at index 1
+System.out.println(list);// [A, X, B, C]
+
+list.remove(2);// remove element at index 2
+System.out.println(list);// [A, X, C]
+
+System.out.println(list.get(1));// X
+
+list.set(1,"Y");// replace index 1
+System.out.println(list);// [A, Y, C]
+
+System.out.println(list.indexOf("Y"));// 1
+System.out.println(list.lastIndexOf("C"));// 2
+
+List<String>sub=list.subList(0,2);
+System.out.println(sub);// [A, Y]
+    }
+}
+```
+
+**For more Check Java Documentation.**
