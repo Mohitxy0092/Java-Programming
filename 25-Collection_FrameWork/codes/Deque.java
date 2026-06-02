@@ -12,5 +12,32 @@ public class Deque{
         //stack
         q.push(10002);
         q.pop();
+        ArrayDeque<String>queue=new ArrayDeque<String>();
+        queue.offerLast("H");
+        queue.offerLast("e");
+        queue.offerLast("l");
+        queue.offerLast("l");
+        queue.offerLast("o");
+        while(!queue.isEmpty()){
+            System.out.println(queue.pollFirst());
+        }
+        System.out.println();
+        queue.forEach((e)-> {
+            System.out.println(e);
+        });
+        ArrayDeque<String>stack=new ArrayDeque<>();
+        stack.offerLast("W");
+        stack.offerLast("o");
+        stack.offerLast("r");
+        stack.offerLast("l");
+        stack.offerLast("d");
+        while(!stack.isEmpty()){
+            System.out.println(stack.pollLast());
+        }
+        System.out.println();
+        stack.forEach((e)-> {
+            System.out.println(e);
+        });
+
     }
 }

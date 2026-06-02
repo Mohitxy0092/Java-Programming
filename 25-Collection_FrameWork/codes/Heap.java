@@ -12,21 +12,15 @@ public class Heap{
     public static void main(String[] args) {
         // bydefault min-heap 
         // PriorityQueue<Integer> pq=new PriorityQueue<>(new cmp());
-        PriorityQueue<Integer>pq =new PriorityQueue<>((a,b)->Integer.compare(a, b));// min heap
-        PriorityQueue<Integer>pq =new PriorityQueue<>((a,b)->Integer.compare(b, a));// max heap
+        PriorityQueue<Integer>min_heap =new PriorityQueue<>((a,b)->Integer.compare(a, b));// min heap
+        PriorityQueue<Integer>max_heap =new PriorityQueue<>((a,b)->Integer.compare(b, a));// max heap
 
-        pq.add(10);
-        pq.add(100);
-        pq.add(1);
-        pq.add(101);
-        // Scanner sc=new Scanner(System.in);
-        // for(int i=0;i<3;++i) {
-        //     pq.add(sc.nextInt());
-        // }
-        // sc.close();
-        while(!pq.isEmpty()) {
-            System.out.println(pq.poll());
-            
+        min_heap.add(10);
+        min_heap.add(100);
+        min_heap.add(1);
+        min_heap.add(101);
+        while(!min_heap.isEmpty()) {
+            System.out.println(min_heap.poll());
         }
     }
 }
