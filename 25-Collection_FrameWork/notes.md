@@ -576,25 +576,25 @@ or
 TreeSet<Student>set=newTreeSet<>((a,b) ->a.id-b.id)
 ```
 
-
 ## TreeMap and HashMap
+
 - **`HashMap`** is a hash table-based implementation of the `Map` interface that allows for fast retrieval of key-value pairs based on their keys. It does not maintain any order of the keys and allows one `null` key and multiple `null` values.
 - **`TreeMap`** is a Red-Black tree-based implementation of the `Map` interface that maintains its keys in sorted order. It does not allow `null` keys but allows multiple `null` values. The keys are ordered either by their natural ordering (if they implement `Comparable`) or by a provided `Comparator`.
 - Both `HashMap` and `TreeMap` are not synchronized and do not support concurrent access by multiple threads. The choice between them depends on whether you need sorted keys (`TreeMap`) or faster access based on hashing (`HashMap`).
 - In summary, `HashMap` is generally faster for most operations when order is not important, while `TreeMap` is useful when you need to maintain a sorted order of keys.
 
 ### Common Operations on TreeMap and HashMap
-| Operation          | Description                               | Time Complexity (HashMap) | Time Complexity (TreeMap) |
-| ------------------ | ----------------------------------------- | ------------------------- | ------------------------- |
-| `put(key, value)`  | Add or update a key-value pair            | O(1) average               | O(log n)                 |
-| `get(key)`         | Retrieve value by key                         | O(1) average               | O(log n)                 |
-| `remove(key)`      | Remove key-value pair by key                 | O(1) average               || O(log n)                 |
-| `containsKey(key)` | Check if a key exists in the map              | O(1) average               | O(log n)                 |
-| `containsValue(value)` | Check if a value exists in the map            | O(n)                     | O(n)                     |
-| `size()`           | Number of key-value pairs                    | O(1)                     | O(1)                     |
-| `isEmpty()`        | Check if the map is empty                          | O(1)                     | O(1)                     |
-| `clear()`          | Remove all key-value pairs                    | O(n)                     | O(n)                     |
-| `keySet()`         | Get a set of all keys in the map              | O(1)                     | O(1)                     |
-| `values()`         | Get a collection of all values in the map          | O(1)                     | O(1)                     |
-| `entrySet()`       | Get a set of all key-value pairs as Map.Entry objects | O(1)                     | O(1)                     |
 
+| Operation              | Description                                           | Time Complexity (HashMap) | Time Complexity (TreeMap) |
+| ---------------------- | ----------------------------------------------------- | ------------------------- | ------------------------- |
+| `put(key, value)`      | Add or update a key-value pair                        | O(1) average              | O(log n)                  |
+| `get(key)`             | Retrieve value by key                                 | O(1) average              | O(log n)                  |
+| `remove(key)`          | Remove key-value pair by key                          | O(1) average              | O(log n)                  |
+| `containsKey(key)`     | Check if a key exists in the map                      | O(1) average              | O(log n)                  |
+| `containsValue(value)` | Check if a value exists in the map                    | O(n)                      | O(n)                      |
+| `size()`               | Number of key-value pairs                             | O(1)                      | O(1)                      |
+| `isEmpty()`            | Check if the map is empty                             | O(1)                      | O(1)                      |
+| `clear()`              | Remove all key-value pairs                            | O(n)                      | O(n)                      |
+| `keySet()`             | Get a set of all keys in the map                      | O(1)                      | O(1)                      |
+| `values()`             | Get a collection of all values in the map             | O(1)                      | O(1)                      |
+| `entrySet()`           | Get a set of all key-value pairs as Map.Entry objects | O(1)                      | O(1)                      |
