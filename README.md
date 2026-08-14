@@ -25,12 +25,12 @@
 | 18 | Exception Handling          | [Open Notes](./18-ExceptionHandling/notes.md)            |
 | 19 | Multithreading              | [Open Notes](./19-MultiThreading/notes.md)               |
 | 20 | java.lang Package           | [Open Notes](./20-java.lang_Packages/notes.md)           |
-| 21 | Annotations & JavaDocs      | [Open Notes](./21-Annotations%20and%20JavaDocs/notes.md) |
+| 21 | Annotations and JavaDocs      | [Open Notes](./21-Annotations%20and%20JavaDocs/notes.md) |
 | 22 | Lambda Expressions          | [Open Notes](./22-Lambda_Expression/notes.md)            |
 | 23 | Java I/O Streams            | [Open Notes](./23-Java_IO_Stream/notes.md)               |
 | 24 | Java Generics               | [Open Notes](./24-Java_Generics/notes.md)                |
 | 25 | Collections Framework       | [Open Notes](./25-Collection_FrameWork/notes.md)         |
-| 26 | Java Memory Management | [Open Notes](./26-Java%20Memory%20Management/notes.md)   |
+| 26 | Java Memory Management      | [Open Notes](./26-Java%20Memory%20Management/notes.md)   |
 ## Folder Structure
 
 ```java
