@@ -13,7 +13,7 @@ class myArray <T> {
         }
     }
 }
-public class genericArrayDemo {
+public class GenericArrayDemo {
     public static void main(String[] args) {
         // myArray<Integer> t=new myArray<>();
         myArray t=new myArray();

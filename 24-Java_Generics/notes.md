@@ -2,22 +2,41 @@
 
 ## Q1 : Why we need Generics in Java what are the problems without Generics?
 
-Generics were introduced in Java to provide stronger type checks at compile time and to support generic programming. Before generics, developers often used `Object` references to store different types of objects, which led to several problems:
-
-1. **Type Safety**: Without generics, you could inadvertently add an object of the wrong type to a collection, leading to `ClassCastException` at runtime when you try to retrieve and cast the object.
-2. **Code Clarity**: Code that uses generics is often clearer and easier to read because it explicitly states what type of objects a collection can hold.
-3. **Elimination of Casts**: With generics, you don't need to cast objects when retrieving them from a collection, reducing boilerplate code and potential runtime errors.
-4. **Reusability**: Generics allow you to create classes, interfaces, and methods that operate on a parameterized type, making them more reusable across different types.
-5. Compile-Time Checking: Generics enable the compiler to catch type-related errors at compile time rather than at runtime, leading to more robust code.
-6. Improved Performance: By avoiding the need for casting, generics can lead to better performance since there is less overhead associated with type checking at runtime.
-
+Generics were introduced in Java 5 to provide compile-time type safety and to create reusable classes, interfaces, and methods that can work with different types. Without Generics, Java code often uses Object, which can lead to incorrect types being inserted into collections, explicit type casting, ClassCastException at runtime, and less readable code. Generics allow the compiler to detect type errors at compile time, reduce the need for casting, improve code clarity, and make code more reusable and maintainable.
 Overall, generics enhance the robustness, maintainability, and readability of Java code by providing a way to define classes and methods with a placeholder for the type of data they operate on.
+>**Example without generic**
+ ```Java
+//Print.java 
+public class Print{
+    Object value;
+    public void setPrintValue(Object val){
+        this.value=val;
+    }
+    public Object getPrintValue(){
+        return value;
+    }
+}
+```
+```Java
+//Main.java
+public class Main{
+    public static void main(String[] agrs) {
+        Print printobj=new Print();
+        printobj.setPrintValue(1);
+        Object printval=printobj.getPrintValue();
+        int flg=1;
+        if(((int)printval)==(flg)) {
+            System.out.print("Verified...");
+        }else {
+            System.out.print("Try Again...");
+        }
+    }
+}
+```
 
 ## What is Generics in Java?
 
-Generics allow you to write classes, interfaces, and methods that work with different data types, without having to specify the exact type in advance.
-
-This makes your code more flexible, reusable, and type-safe.
+>Generics in Java are a feature that allows classes, interfaces, and methods to operate on parameterized types, providing type safety at compile time, reducing the need for explicit casting, and improving code reusability.
 
 ## Why Use Generics?
 
@@ -37,52 +56,80 @@ class Data <T> {
         return obj;
     }
 }
-public class genericDemo3 {
+public class GenericDemo3 {
     public static void main(String[] args) {
         Data<Integer> d=new Data<>();
         d.setData(10);
         d.setData(20);
         System.out.println(d.getData());
+        Data<String> d2= new Data<>(); //code reusable, type safety ,clean code
+        d2.setData("Hello");
+        System.out.print(d2.getData());
     }
 }
 ```
-
+```bash
+output : 
+20 
+Hello
+```
 In this example, `Data` is a generic class that can hold any type of object specified by the type parameter `T`. When we create an instance of `Data<Integer>`, it means that this instance will only hold `Integer` objects. This ensures type safety and eliminates the need for casting when retrieving the data.
 
 ---
 
-## Note: Generics does not work with primitive types (int, float, char, etc). Instead, we use their wrapper classes (Integer, Float, Character, etc).
+> **Note: Generics does not work with primitive types (int, float, char, etc). Instead, we use their wrapper classes (Integer, Float, Character, etc).**
 
 ---
 
-## No Parameterized Types
+## Inheritance with Generic Class
 
-When you create a generic class or method without specifying a type parameter, it is called a raw type. Using raw types can lead to unsafe operations and is generally discouraged.
-
-### Example of Raw Type:
-
-```java
-class Data {
-    private Object obj;
-    public void setData(Object obj) {
+>**Non Generic Subclass**
+> 
+```Java
+class Data <T> {
+    private T obj;
+    public void setData(T obj) {
         this.obj=obj;
     }
-    public Object getData() {
+    public T getData() {
         return obj;
     }
 }
-public class genericDemo4 {
-    public static void main(String[] args) {
-        Data d=new Data();
-        d.setData(10); // Storing an Integer
-        d.setData("Hello"); // Storing a String
-        Integer value = (Integer) d.getData(); // This will cause a ClassCastException at runtime
-        System.out.println(value);
+class subPrint extends Data<String>{
+
+}
+public class Main{
+    public static void main(String[] args){
+        subPrint s1=new subPrint();
+        s1.setData("Hello");
+        System.out.println(s1.getData());
+    }
+}
+
+```
+>**Generic Subclass**
+
+```Java
+class Data <T> {
+    private T obj;
+    public void setData(T obj) {
+        this.obj=obj;
+    }
+    public T getData() {
+        return obj;
+    }
+}
+class subPrint<T> extends Data<T>{
+
+}
+public class Main2{
+    public static void main(String[] args){
+        subPrint<String> s1=new subPrint<>();
+        s1.setData("Hello");
+        System.out.println(s1.getData());
     }
 }
 ```
-
-In this example, the `Data` class uses `Object` to store any type of data. When we retrieve the data, we have to cast it to the expected type, which can lead to a `ClassCastException` if the type does not match. This is one of the main problems that generics aim to solve by providing type safety at compile time.
 
 ---
 
@@ -118,13 +165,48 @@ public class Demo{
     }
 }
 ```
-
-In this example, the `Pair` class uses two type parameters, `K` and `V`, to represent the key and value types, respectively. When we create an instance of `Pair<String, Integer>`, it means that the key is of type `String` and the value is of type `Integer`. This allows for greater flexibility and type safety when working with pairs of related data.
+>In this example, the `Pair` class uses two type parameters, `K` and `V`, to represent the key and value types, respectively. When we create an instance of `Pair<String, Integer>`, it means that the key is of type `String` and the value is of type `Integer`. This allows for greater flexibility and type safety when working with pairs of related data.
 ---
+## Raw Type Object
+>It's a name of the generic class or interface without  any type  argument.
+
+```Java
+public class Print<T>{
+    private T obj;
+    public void setData(T obj) {
+        this.obj=obj;
+    }
+    public T getData() {
+        return obj;
+    }
+    
+}
+public class Main{
+    public static void main(String[] args){
+        Print printobj=new Print();
+        printobj.setData(1);
+        System.out.println(printobj.getData());
+    }
+}
+
+```
+>output : 1
+
+>So while creating the object, we didn't pass any type as parameterized type .
+Therefore , internally it  passes Object as parameterized type.
+> So `printobj` is a raw type object.
 
 ## Bounded Type Parameters
 Generics in Java can also have bounded type parameters, which restrict the types that can be used as arguments for a type parameter. This is done using the `extends` keyword.
-### Example of Bounded Type Parameters:
+
+- They are of two Types:
+  - Upper Bound
+  - Multi Bound
+
+### Upper Bound
+>It is used to restrict what all objects we can pass at this type parameter.
+>In our case we are using Number class, So now only Number or its child subclasses can be used as objects .
+### Example of Upper Bounded:
 
 ```java
 class Box<T extends Number> {
@@ -157,6 +239,35 @@ In this example, the `Box` class has a bounded type parameter `T` that extends t
 
 ---
 
+>**Note:** Java does not allow a class to extend multiple classes because it can create **ambiguity** and **complexity**, especially when both parent classes provide the same method or state. This is commonly explained using the Diamond Problem.
+> ![alt text](/images/multiclass.png)
+
+### Multi Bound 
+
+A multiple bound in Java generics allows a type parameter to be restricted by more than one type using the `&` syntax.
+This ensures that the passed type argument is a subtype of all specified types.
+
+>**3 Strict Rules to Follow:**
+ >>**The Class Bound Must Come First:** If one of your bounds is a class, it must be the very first bound in the list.
+ Placing an interface before a class causes a compile-time error.
+ 
+> > **Single Class Limitation:** Java does not support multiple inheritance for classes.
+Therefore, you can only specify a maximum of one class as a bound.
+
+>> **Unlimited Interfaces:** You can chain as many interface bounds as you need using the & operator.
+
+```Java
+public class A extends ParentClass implements Interface1,Interface2
+    {
+        //something
+    }
+```
+
+```Java
+public class A<T extends ParentClass & Interface1 & Interface2>{
+    
+}
+```
 ## Subtypes
 In Java Generics, subtyping works differently than with regular classes. If you have a generic class `Box<T>`, then `Box<SubType>` is not considered a subtype of `Box<SuperType>`, even if `SubType` is a subtype of `SuperType`. This is known as invariance in generics.
 
@@ -277,6 +388,14 @@ public class UpperBoundedWildcardDemo {
 ```
 In this example, the `printNumbers` method accepts a `List<? extends Number>`, which means it can accept a list of `Number` or any of its subtypes (like `Integer` or `Double`). This allows us to read `Number` values from the list without any issues. In the `main` method, we create a `List<Integer>` and a `List<Double>` and pass them to the `printNumbers` method, demonstrating the use of upper bounded wildcards.
 
+---
+
+## Unbounded Wildcard
+
+Mostly used when my method can work on the methods provided by the object class.
+
+## Type Erasure :
+Whatever the code we write, when the bytecode is generated ,it is all replaced by actual values.
 ## Do and Don'ts of Generics
 
 ### Do's:

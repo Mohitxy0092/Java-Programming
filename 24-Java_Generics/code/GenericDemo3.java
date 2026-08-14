@@ -7,11 +7,13 @@ class Data <T> {
         return obj;
     }
 }
-public class genericDemo3 {
+public class GenericDemo3 {
     public static void main(String[] args) {
         Data<Integer> d=new Data<>();
         d.setData(10);
-        d.setData(20);
         System.out.println(d.getData());
+        Data<String> d2=new Data<String>();//new Data<>(); both are correct;
+        d2.setData("Hello");
+        System.out.println(d2.getData());
     }
 }
