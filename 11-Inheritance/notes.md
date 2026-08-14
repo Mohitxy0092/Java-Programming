@@ -4,7 +4,7 @@
 
 - **Generalization**: The process of extracting shared characteristics from two or more classes and combining them into a generalized superclass. This helps to reduce redundancy and promote code reuse.
 
-![alt text](../images//gen.png)
+![alt text](/images/gen.png)
 
 - **Specialization**: The process of creating new subclasses from an existing class by adding specific attributes or methods. This allows for more specific implementations while still inheriting common features from the superclass.
 
@@ -17,7 +17,129 @@ Inheritance is a fundamental concept in object-oriented programming that allows 
 - subclass (child) - the class that inherits from another class
 - superclass (parent) - the class being inherited from
 
+---
 
+## Inheritance `Is-a` and `Has-a` relationship
+
+## 1. IS-A Relationship
+
+An **is-a** relationship means that one class **is a type of another class**. It is achieved using the `extends` keyword (or `implements` for interfaces).
+
+### Example
+
+```java 
+// Parent class
+
+class Animal {
+    void eat() {
+        System.out.println("Animal eats food");
+    }
+}
+
+// Child class
+class Dog extends Animal {
+    void bark() {
+    System.out.println("Dog barks");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+    Dog d=new Dog();
+    d.eat(); // Inherited method
+    d.bark(); // Dog's own method
+    }
+}
+```
+
+### Output
+
+```
+Animal eats food
+Dog barks
+```
+
+### Explanation
+
+- `Dog extends Animal`
+- A **Dog is an Animal**.
+- `Dog` inherits the properties and methods of `Animal`.
+
+Examples:
+
+- Car **is a** Vehicle
+- Student **is a** Person
+- Circle **is a** Shape
+
+---
+
+## 2. HAS-A Relationship (Composition/Aggregation)
+
+A **has-a** relationship means that one class **contains an object of another class**.
+
+The composition is another mechanism provided by OOP for reusing implementation.
+
+In a nutshell, composition allows us to model objects that are made up of other objects, thus defining a “has-a” relationship between them.
+
+Furthermore, the composition is the strongest form of **association** , which means that the object(s) that compose or are contained by one object are destroyed too when that object is destroyed.
+### Example
+
+```java
+// Engine class
+ class Engine {
+    void start() {
+        System.out.println("Engine started");
+    }
+ }
+ 
+// Car class
+class Car {
+    private Engine engine=newEngine(); // Car has an Engine
+    void drive() {
+        engine.start();
+        System.out.println("Car is moving");
+    }
+}
+public class Main {
+public static void main(String[] args) {
+    Car car=newCar();
+    car.drive();
+  }
+}
+```
+
+### Output
+
+```
+Engine started
+Car is moving
+```
+
+### Explanation
+
+- `Car` contains an `Engine` object.
+- A **Car has an Engine**.
+- `Car` uses the functionality of `Engine` instead of inheriting from it.
+
+Examples:
+
+- Car **has a** Engine
+- Computer **has a** Keyboard
+- House **has a** Room
+
+---
+
+## Difference Between IS-A and HAS-A
+
+| IS-A Relationship | HAS-A Relationship |
+| --- | --- |
+| Represents inheritance | Represents composition or aggregation |
+| Uses `extends` or `implements` | Uses object reference (instance variable) |
+| Models specialization | Models ownership or containment |
+| Example: Dog is an Animal | Example: Car has an Engine |
+| Promotes code reuse through inheritance | Promotes code reuse through object composition |
+
+
+---
 
 ## 1. Single Inheritance
 
@@ -155,7 +277,7 @@ public class Example{
 }
 ```
 
-![image](../images/Inheri.png)
+![image](/images/Inheri.png)
 
 ---
 
@@ -226,7 +348,7 @@ Dog is barking
 ## Disadvantages of Inheritance
 
 - **Tight Coupling**: Inheritance creates a strong dependency between the superclass and subclass
-, making it difficult to modify one without affecting the other.
+  , making it difficult to modify one without affecting the other.
 - **Increased Complexity**: Deep inheritance hierarchies can lead to complex code structures that are hard to understand and maintain.
 - **Limited Flexibility**: Subclasses are constrained by the design of the superclass, which may limit their ability to implement specific behaviors.
 - **Potential for Name Conflicts**: If a subclass defines a method or attribute with the same name as one in the superclass, it can lead to confusion and unexpected behavior.
@@ -450,11 +572,16 @@ public class DynamicDispatch{
 ```java
 
 Method 1 is called...
+
 Method 2 SubClass is calling...
+
 Method 2 is calling...
+
 Method 3 is calling...
+
 ```
 
-## NOTE:-In the above example, the method2() of SubClass is called at runtime, demonstrating dynamic method dispatch. and we can only call methods which are in super class using super class reference.
+**NOTE:-** In the above example, the method2() of SubClass is called at runtime, demonstrating dynamic method dispatch. and we can only call methods which are in super class using super class reference.
 
-## keep this in mind that final and static methods cannot be overridden, so they do not participate in dynamic method dispatch,and trying to override them will result in a compile-time error.
+---
+**Keep this in mind that final and static methods cannot be overridden, so they do not participate in dynamic method dispatch,and trying to override them will result in a compile-time error.**
