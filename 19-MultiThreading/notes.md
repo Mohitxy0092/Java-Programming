@@ -5,7 +5,8 @@
 - To maximize CPU utilization.
 - To increase system throughput.
 - To reduce waiting time for processes.
-for example: you are using a computer to type a document, while the computer is also downloading a file in the background. The CPU switches between these tasks, allowing you to work on your document while the download continues without interruption.
+
+>for example: you are using a computer to type a document, while the computer is also downloading a file in the background. The CPU switches between these tasks, allowing you to work on your document while the download continues without interruption.
 
 ## What is Program?
 
@@ -60,17 +61,12 @@ A thread is the smallest unit of execution within a process. It is a sequence of
   - Inter-thread communication is faster for threads.
 ## what is multiprogramming
 
-Multiprogramming is a method where multiple programs are loaded into memory and the CPU switches between them to maximize resource utilization. It allows multiple processes to reside in memory simultaneously, enabling the CPU to execute one process while others wait for I/O operations to complete. This improves overall system efficiency and throughput by keeping the CPU busy.
+Multiprogramming is a method where multiple programs are loaded into memory and the CPU switches between them to maximize resource utilization.
+It allows multiple processes to reside in memory simultaneously, enabling the CPU to execute one process while others wait for I/O operations to complete. 
+This improves overall system efficiency and throughput by keeping the CPU busy.
 
-### more layman terms:
 
-#### Running more than one program that is running multiple programs on a single machine or a computer is known as multi-programming.
-
-#### The idea of multiprogramming started from the utilisation of the CPU when it is idle as the CPU works for just few time in the whole hour.
-
-#
-
-There are different forms of multi-programming.
+>There are different forms of multi-programming.
 
 ![alt text](../images/multith.png)
 
@@ -97,7 +93,7 @@ There are different forms of multi-programming.
   - The CPU switches between threads rapidly, creating the illusion that they're running simultaneously.
   - Multithreading improves application responsiveness and resource utilization.
 
-- ## Examples of Multithreading:
+>Examples of Multithreading:
 
   - **Web Servers:** Handle multiple client requests simultaneously using threads.
 
@@ -146,17 +142,21 @@ Java provides built-in support for multithreading through the `Thread` class and
 ### Creating a Thread in Java using the `Runnable` interface:
 
   ```java
-    class MyRunnable implements Runnable {
+    //MyRunnable.java
+    public class MyRunnable implements Runnable {
         public void run() {
             System.out.println("Runnable thread is running");
         }
-        
+}
+//Main.java
+    public class Main{
         public static void main(String[] args) {
             Thread thread = new Thread(new MyRunnable());
             thread.start(); // Start the thread
-        }
-    }
-    //or you can do it with using different class look at RunnableClass1.java file
+        }   
+            
+    }    
+
   ```
 
 ---
@@ -166,7 +166,7 @@ Java provides built-in support for multithreading through the `Thread` class and
 ![alt text](../images/threadState.png)
 
 1. **New:** A thread is created but not yet started.
-2. **Runnable:** The thread is ready to run and waiting for CPU time.
+2. **Ready:** The thread is ready to run and waiting for CPU time.
 3. **Running:** The thread is currently executing.
 4. **Terminated:** The thread has completed its execution.
 5. **Blocked:** The thread is waiting for a resource or I/O operation to complete.
@@ -177,7 +177,8 @@ Java provides built-in support for multithreading through the `Thread` class and
 
 ## Thread Priorities in Java:
 
-Java allows you to set thread priorities to influence the order in which threads are scheduled for execution. Thread priorities range from `MIN_PRIORITY` (1) to `MAX_PRIORITY` (10), with `NORM_PRIORITY` (5) as the default.
+Java allows you to set thread priorities to influence the order in which threads are scheduled for execution.
+Thread priorities range from `MIN_PRIORITY` (1) to `MAX_PRIORITY` (10), with `NORM_PRIORITY` (5) as the default.
 
 - **MIN_PRIORITY (1):** The lowest priority.
 - **NORM_PRIORITY (5):** The default priority.
@@ -194,11 +195,11 @@ Now the question is how the JVM schedules threads?
 
 The JVM uses a priority-based scheduling algorithm, where threads with higher priority are given preference for CPU time over lower-priority threads. However, the actual scheduling is ultimately determined by the operating system's thread scheduler, which may implement its own policies and algorithms.
 
- **Question 1:** Can a lower-priority thread ever starve a higher-priority thread in Java?
+> **Question 1:** Can a lower-priority thread ever starve a higher-priority thread in Java?
 
   Yes, it is possible for a lower-priority thread to starve a higher-priority thread in Java, especially if the operating system's scheduler does not strictly enforce priority-based scheduling. This situation can occur in systems where the scheduler uses time-slicing or other algorithms that do not guarantee that higher-priority threads will always get CPU time before lower-priority threads. However, such scenarios are relatively rare in modern operating systems that implement fair scheduling policies.
 
-**Question 2:** How can we prevent thread starvation in Java?
+> **Question 2:** How can we prevent thread starvation in Java?
 
   To prevent thread starvation in Java, developers can use several strategies:
 
@@ -206,9 +207,10 @@ The JVM uses a priority-based scheduling algorithm, where threads with higher pr
   2. **Avoid Priority Inversion:** Be cautious when using thread priorities, as they can lead to priority inversion. Consider using techniques like priority inheritance to mitigate this issue.
   3. **Monitor Thread States:** Regularly monitor the states of threads to ensure that no thread is being starved of CPU time.
 
-**Question 3:** What if we set thread priority invalid values in Java?
+>**Question 3:** What if we set thread priority invalid values in Java?
 
-  In Java, if you attempt to set a thread's priority to an invalid value (less than 1 or greater than 10), the JVM will throw an `IllegalArgumentException`. The valid range for thread priorities in Java is from `Thread.MIN_PRIORITY` (1) to `Thread.MAX_PRIORITY` (10). Attempting to set a priority outside this range will result in an error, ensuring that thread priorities remain within acceptable limits.
+  In Java, if you attempt to set a thread's priority to an invalid value (less than 1 or greater than 10),
+  the JVM will throw an `IllegalArgumentException`. The valid range for thread priorities in Java is from `Thread.MIN_PRIORITY` (1) to `Thread.MAX_PRIORITY` (10). Attempting to set a priority outside this range will result in an error, ensuring that thread priorities remain within acceptable limits.
 
 
 ---
@@ -219,116 +221,114 @@ The `Thread` class in Java is a built-in class that provides the necessary metho
 
 ## Some points about Thread class:
 
-1. Object of the Thread class can also be created.
-2. Whenever a thread is created it gets some IDE.
-3. Threads can be identified by their names.
+- Object of the Thread class can also be created.
+- Whenever a thread is created it gets some IDE. 
+- Threads can be identified by their names.
 
-## There are different constructors to give the thread classes: 
+### **There are different constructors to give the thread classes:** 
 
-Thread()
- Default constructor.
+>`Thread()`: Default constructor.
 
-Thread(Runnable r)
-Creates a thread with a runnable interface.
+>`Thread(Runnable r)`:Creates a thread with a runnable interface.
 
-Thread(Runnable r, String name)
+>`Thread(Runnable r, String name)`:
 Creates a thread with a runnable interface and a custom name.
 
-Thread(ThreadGroup g, String name)
+>`Thread(ThreadGroup g, String name)`:
 Creates a thread within a thread group to manage multiple threads together.
 
-For example:
+>**For example:**
 In MS Word, one thread takes input from the keyboard, another thread checks spelling simultaneously, and another thread auto-saves the document. The first priority is given to the thread that takes the input.
 
-Thread(String name)
+>`Thread(String name)`:
 Creates a thread with a custom name.
-Thread(ThreadGroup g, Runnable r)
+
+>`Thread(ThreadGroup g, Runnable r)`:
 Creates a thread within a thread group with a runnable interface.
-Thread(ThreadGroup g, Runnable r, String name)
-Creates a thread within a thread group with a runnable interface and a custom name.
-Thread(ThreadGroup g, Runnable r, String name, long stackSize)
+
+>`Thread(ThreadGroup g, Runnable r, String name)`:
+Creates a thread within a thread group with a runnable interface and a custom name. 
+
+>`Thread(ThreadGroup g, Runnable r, String name, long stackSize)`:
 Creates a thread within a thread group with a runnable interface, a custom name, and a specified stack size.
 
 ## Methods of Thread class:
 
 ### Getter and Setter Methods:
 
-long threadId() OR getId()
+>`long threadId()` OR `getId()`
 Returns the ID of a particular thread.
 
-String getName()
+>`String getName()`
 Returns the name of the thread.
 
-int getPriority()
+>`int getPriority()`
 Returns the current priority of the thread.
 
-Thread.State getState()
+>`Thread.State getState()`
 Returns the state of the thread.
 
-ThreadGroup getThreadGroup()
+>`ThreadGroup getThreadGroup()`
 Returns the group to which the thread belongs.
 
-void setName(String name)
+>`void setName(String name)`
 Sets the name of the thread.
 
-void setPriority(int p)
+>`void setPriority(int p)`
 Sets the priority of the thread.
 
-void setDaemon(Boolean d)
+>`void setDaemon(Boolean d)`
 Sets a background thread with the lowest priority and no user interaction.
 
-For example:
+**For example:**
 Different types of balloons or balls in an animation, each having their own thread class, demonstrate a thread group.
 
-For example:
+**For example:**
 The garbage collector in the JVM has the least priority.
 
 ### Inquiry Methods:
 
-boolean isAlive()
+>`boolean isAlive()`
 Checks if the thread is alive or terminated.
 
-boolean isDaemon()
+>`boolean isDaemon()`
 Checks if the thread is acting as a daemon.
 
-boolean isInterrupted()
+>`boolean isInterrupted()`
 Checks whether the thread has been interrupted.
 
 ### Instance Methods:
 
-void interrupt()
+>`void interrupt()`
 Interrupts the thread, typically when it's waiting or sleeping.
 
-void join()
+>`void join()`
 Keeps the thread waiting to join with another thread until it completes.
 
-void join(long millis)
+>`void join(long millis)`
 Joins the main thread with another for a specified period of time.
 
-void run()
+>`void run()`
 Contains the actual functionality of the thread and can be overridden.
 
-void start()
+>`void start()`
 Starts the thread.
 
 ### Static Methods:
 
 These can be called using the class name.
 
-int activeCount()
+>`int activeCount()`
 Returns the number of active threads in a particular group.
-Thread currentThread()
+
+>`Thread currentThread()`
 Returns a reference to the current or running thread.
 
-void yield()
+>`void yield()`
 Signals higher-priority threads to wait briefly, allowing lower-priority threads to finish their work.
 
-void dumpStack()
+>`void dumpStack()`
 Displays the contents or depth of the stack.
-
-## Go to the official documentation for more methods and details:
-
-[Click Here!!](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html)
 
 ---
 
