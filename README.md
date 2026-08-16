@@ -32,6 +32,7 @@
 | 25 | Collections Framework       | [Open Notes](./25-Collection_FrameWork/notes.md)         |
 | 26 | Java Memory Management      | [Open Notes](./26-Java%20Memory%20Management/notes.md)   |
 | 27 | Pojo Classes and Enum       | [Open Notes](./27-Pojo%20Classes/notes.md)               |
+| 28 | Singleton Classes and More  | [Open Notes](./28-Classes%20Final%20Part/notes.md)       |
 ## Folder Structure
 
 ```java
